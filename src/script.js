@@ -19,3 +19,11 @@ function Converter() {
     elementoResultado.innerHTML = `A conversão de ${moedaInicial} para ${moedaFinal} é $${valorConvertido.toFixed(2)}`;
     elementoResultado.style.color = "black"; // Resetando cor caso tenha erro antes
 }
+
+
+// Adicionar suporte à integração com APIs de câmbio para taxas de conversão automáticas e atualizadas.
+// Implementar validações para evitar erros de entrada do usuário.
+
+// inner resultado
+
+// historico com data de hoje

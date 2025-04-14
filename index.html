@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moeda</title>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./src/styles.css">
+</head>
+
+<body>
+
+
+    <div class="main">
+
+        <div class="header">
+            <img src="https://cdn-icons-png.flaticon.com/512/7548/7548636.png" class="page-logo" alt="">
+            <div class="header-text">
+                <h1>Conversor de moedas</h1>
+                <h2>Adicione as informações e converta o valor que desejar!</h2>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <p>Indique o valor que precisa transferir e escolha as moedas.</p>
+
+            <div class="data-entry">
+
+                <input type="number" id="value1" placeholder="Valor" />
+                <select id="tax1" placeholder="Moeda de Origem"></select>
+
+                <button onclick="Converter()">
+                    Converter
+                    <img src="https://cdn-icons-png.flaticon.com/512/271/271226.png" id="arrow"
+                        alt="Seta apontando para direita">
+                </button>
+
+                <p id="result"> Resultado </p>
+
+                <select id="tax2" placeholder="Moeda de Saída"></select>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
