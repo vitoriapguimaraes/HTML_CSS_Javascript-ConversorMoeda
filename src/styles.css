@@ -8,9 +8,9 @@ body {
 
 body {
   background-color: black;
-  font-family: Arial, sans-serif;
   background: url('./assets/background-img.png') no-repeat center center/cover;
-  color: black;
+  font-family: 'Inter', Arial, sans-serif;
+  color: white;
 }
 
 .main {
@@ -37,18 +37,23 @@ h2 {
   font-weight: 600;
 }
 
-.page-logo {
-  width: 6rem;
-  height: 6rem;
+.content {
+  display: flex;
+  justify-content: space-around;
 }
 
-.content {
+.exchange-container,
+.historical {
+  padding: 1rem;
+  width: 40rem;
+}
+
+.exchange-container {
   display: flex;
   flex-direction: column;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 1rem;
-  padding: 1rem;
+  height: 11rem;
 }
 
 .data-entry {
@@ -58,35 +63,93 @@ h2 {
   gap: 1rem;
 }
 
-#arrow {
-  width: 1.1rem;
-  height: 1.1rem;
-}
-
-input, select, button, #result {
+input,
+select,
+button,
+#result {
   border: none;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-input, select {
-  background: #d6e3ec;
+input,
+select {
+  background: rgba(222, 255, 216, 0.726);
   font-family: 'Antonio', sans-serif;
-  color: lightgrey;
+  color: black;
+  width: 4rem;
+  font-size: 0.8rem;
 }
 
 #result {
-  background: #0c3757;
+  background: rgb(22, 133, 0);
   color: white;
+  width: 6rem;
+
 }
 
 button {
-  background-color: #C23A43;
+  background-color: #a59e20;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 6rem;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
 button:hover {
-  background-color: #C2BE38;
+  background-color: #928d06;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+ 
+}
+
+.historical {
+  background-color: rgba(43, 255, 0, 0.5);
+  font-size: 1rem;
+}
+
+.historical-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#export-button {
+  width: 12rem;
+  height: 1.5rem;
+  border-radius: 0%;
+}
+
+#history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#history-table th,
+#history-table td {
+  padding: 10px;
+  text-align: center;
+}
+
+#history-table th {
+  background-color: black;
+  color: white;
+}
+
+#history-table tr:nth-child(even) {
+  background-color: #f2f2f259;
+}
+
+#history-table tr:hover {
+  background-color: darkgray;
 }

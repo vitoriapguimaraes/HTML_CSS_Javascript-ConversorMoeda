@@ -1,29 +1,138 @@
-function Converter() {
-    const moedaInicial = document.getElementById("identicacaoMoedaInicial").value.trim();
-    const moedaFinal = document.getElementById("identicacaoMoedaFinal").value.trim();
-    const taxa = parseFloat(document.getElementById("taxaConversão").value);
-    const valor = parseFloat(document.getElementById("valor").value);
-    const elementoResultado = document.getElementById("resultado");
+const currencySelect1 = document.getElementById("currency1");
+const currencySelect2 = document.getElementById("currency2");
+const resultElement = document.getElementById("result");
+const errorElement = document.querySelector(".error");
+const amountInput = document.getElementById("inicialAmount");
+const converterButton = document.getElementById("converter-button");
+const exportButton = document.getElementById("export-button");
+const historyTableBody = document.querySelector("#history-table tbody");
 
-    // Validação de entrada
-    if (!moedaInicial || !moedaFinal || isNaN(taxa) || isNaN(valor)) {
-        elementoResultado.innerHTML = "Preencha todos os campos corretamente!";
-        elementoResultado.style.color = "red";
+function getTodayDate() {
+    const today = new Date();
+    return today.toLocaleDateString("pt-BR");
+}
+
+function showError(message) {
+    errorElement.textContent = message;
+}
+
+function clearError() {
+    errorElement.textContent = "";
+}
+
+function showResult(amount) {
+    resultElement.textContent = amount.toFixed(2);
+}
+
+function createCell(content) {
+    const cell = document.createElement("td");
+    cell.textContent = content;
+    return cell;
+}
+
+function addToHistorical(amount, from, to, convertedAmount) {
+    const row = document.createElement("tr");
+    row.appendChild(createCell(from));
+    row.appendChild(createCell(amount));
+    row.appendChild(createCell(to));
+    row.appendChild(createCell(convertedAmount.toFixed(2)));
+    row.appendChild(createCell(getTodayDate()));
+    historyTableBody.appendChild(row);
+}
+
+async function fetchCurrencies() {
+    try {
+        const res = await fetch(`https://api.currencyapi.com/v3/latest?apikey=${API_KEY}`);
+        const data = await res.json();
+
+        console.log("Resposta da API:", data);
+
+        if (!data || !data.data) {
+            showError("Dados de moedas não disponíveis.");
+            return;
+        }
+
+        const currencies = Object.keys(data.data);
+
+        currencySelect1.innerHTML = "";
+        currencySelect2.innerHTML = "";
+
+        currencies.forEach(currency => {
+            const option1 = new Option(currency, currency);
+            const option2 = new Option(currency, currency);
+            currencySelect1.appendChild(option1);
+            currencySelect2.appendChild(option2);
+        });
+
+        currencySelect1.value = "USD";
+        currencySelect2.value = "BRL";
+
+    } catch (error) {
+        showError(`Erro ao carregar moedas: ${error.message}`);
+    }
+}
+
+async function Converter() {
+    clearError();
+
+    const amount = parseFloat(amountInput.value);
+    const from = currencySelect1.value;
+    const to = currencySelect2.value;
+
+    if (!from || !to || isNaN(amount)) {
+        showError("Preencha todos os campos corretamente!");
         return;
     }
 
-    // Cálculo da conversão
-    const valorConvertido = valor * taxa;
+    try {
+        const res = await fetch(`https://api.currencyapi.com/v3/latest?apikey=${API_KEY}&base_currency=${from}&currencies=${to}`);
+        const data = await res.json();
 
-    // Exibição do resultado
-    elementoResultado.innerHTML = `A conversão de ${moedaInicial} para ${moedaFinal} é $${valorConvertido.toFixed(2)}`;
-    elementoResultado.style.color = "black"; // Resetando cor caso tenha erro antes
+        if (!data || !data.data || !data.data[to]) {
+            showError("Erro ao buscar taxa de câmbio.");
+            return;
+        }
+
+        const rate = data.data[to].value;
+        const finalAmount = amount * rate;
+
+        showResult(finalAmount);
+        addToHistorical(amount, from, to, finalAmount);
+    } catch (error) {
+        showError(`Erro na conversão: ${error.message}`);
+    }
 }
 
+function exportHistory() {
+    const rows = historyTableBody.querySelectorAll("tr");
 
-// Adicionar suporte à integração com APIs de câmbio para taxas de conversão automáticas e atualizadas.
-// Implementar validações para evitar erros de entrada do usuário.
+    if (rows.length === 0) {
+        showError("Nenhum histórico para exportar.");
+        return;
+    }
 
-// inner resultado
+    const separator = "\t";
+    const lineBreak = "\n";
+    let content = `from${separator}amount${separator}to${separator}convertedAmount${separator}date${lineBreak}`;
 
-// historico com data de hoje
+    rows.forEach(row => {
+        const cells = Array.from(row.querySelectorAll("td")).map(cell => cell.textContent);
+        content += cells.join(separator) + lineBreak;
+    });
+
+    const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+
+    const downloadLink = document.createElement("a");
+    downloadLink.href = url;
+    downloadLink.download = "historico_de_conversoes.txt";
+    downloadLink.click();
+
+    URL.revokeObjectURL(url);
+}
+
+window.onload = fetchCurrencies;
+converterButton.addEventListener("click", Converter);
+exportButton.addEventListener("click", exportHistory);
+
+// botão de inverter
