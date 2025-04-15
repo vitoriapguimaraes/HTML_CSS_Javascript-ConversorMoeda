@@ -24,11 +24,13 @@ O projeto oferece uma interface intuitiva para inserir o valor, escolher as moed
 -   JavaScript
 -   API de Câmbio (https://api.currencyapi.com/v3/)
 
-## Como Executar: [cite: 37, 38]
+## Como Executar:
 
 1.  Clone o repositório
 2.  Navegue até o diretório do projeto.
-3.  Abra o arquivo `index.html` no seu navegador.
+3.  Crie sua [chave da API](https://api.currencyapi.com/v3/).
+4.  Crie um arquivo `config.js` para definir a chave (`const API_KEY =`) e adicione a chave criada.
+5.  Abra o arquivo `index.html` no seu navegador.
 
 ## Como Usar:
 
