@@ -1,63 +1,69 @@
-# Conversor de moeda
-O Conversor de Moeda é uma aplicação simples e prática que permite calcular o valor de um produto em reais (ou qualquer moeda desejada) com base no preço em outra moeda. O projeto foi desenvolvido para facilitar conversões rápidas entre diferentes moedas, permitindo ao usuário especificar moedas de origem e destino, a taxa de conversão e o valor a ser convertido.
+# Conversor de Moedas
 
-## Demonstração
-Abaixo está uma visualização do projeto:
+>   Uma aplicação web que permite converter valores entre diferentes moedas de forma fácil e rápida.
 
-![Tela do sistema](https://github.com/vitoriapguimaraes/portfolio-web-Java/blob/master/HTML_CSS_Java-ConversorMoeda/display-ConversorMoeda.png)
+O projeto oferece uma interface intuitiva para inserir o valor, escolher as moedas de origem e destino, e visualizar o resultado da conversão, além de manter um histórico das conversões realizadas.
 
-## Principais Tecnologias Utilizadas
-- HTML5: Estrutura da aplicação, com campos para entradas de dados.
-- CSS3: Estilização da interface, incluindo fontes personalizadas e design responsivo.
-- JavaScript: Lógica de cálculo da conversão e exibição dos resultados.
+<a href="https://vitoriapguimaraes.github.io/HTML_CSS_Javascript-ConversorMoeda/"><img src="https://img.shields.io/badge/-Conversor%20de%20Moeda-000000?style=for-the-badge" alt="HTML_CSS_Javascript-ConversorMoeda">
 
-## Estrutura do Projeto
+![Tela do sistema](https://github.com/vitoriapguimaraes/HTML_CSS_Javascript-ConversorMoeda/blob/main/results/converter.gif)
+
+## Funcionalidades Principais:
+
+-   Converte valores entre diferentes moedas.
+-   Permite ao usuário selecionar a moeda de origem e a moeda de destino.
+-   Exibe o resultado da conversão de forma clara.
+-   Valida a entrada de dados para garantir que os campos sejam preenchidos corretamente.
+-   Mantém um histórico das conversões realizadas.
+-   Permite exportar o histórico de conversões para um arquivo .txt.
+
+## Tecnologias Utilizadas:
+
+-   HTML5
+-   CSS3
+-   JavaScript
+-   API de Câmbio (https://api.currencyapi.com/v3/)
+
+## Como Executar: [cite: 37, 38]
+
+1.  Clone o repositório
+2.  Navegue até o diretório do projeto.
+3.  Abra o arquivo `index.html` no seu navegador.
+
+## Como Usar:
+
+1.  Selecione a moeda de origem no primeiro campo de seleção.
+2.  Insira o valor que deseja converter no campo de entrada.
+3.  Selecione a moeda de destino no segundo campo de seleção.
+4.  Clique no botão "Converter" para realizar a conversão.
+5.  O resultado da conversão será exibido na tela.
+6.  O histórico de conversões é exibido em uma tabela abaixo do conversor.
+7.  Clique no botão "Exportar como .txt" para baixar o histórico de conversões em um arquivo de texto.
+
+## Estrutura de Diretórios:
+
 ```
-/ ConversorDeMoeda
-│
-├── /src
-│   └── index.html             # Arquivo principal que contém a estrutura HTML
-│   └── script.js              # Lógica JavaScript para interações e cálculos
-│   └── style.css              # Arquivo de estilo do projeto
-│
-└── README.md                  # Este arquivo README com instruções e detalhes do projeto
+/conversor-de-moedas
+├── index.html
+├── src
+│   ├── styles.css
+│   ├── script.js
+│   └── config.js          # Arquivo de configuração (API Key)
+├── results/                # Prints e gifs do software
+└── README.md
 ```
 
-## Como Executar
-Para rodar o projeto localmente:
+## Status:
 
-1. Clone o repositório para sua máquina:
-    ```
-    git clone https://github.com/vitoriapguimaraes/portfolio-web-Java/tree/master/HTML_CSS_Java-ConversorMoeda
-    ```
+✅ Concluído
 
-2. Abra o arquivo index.html em seu navegador.
+>   Melhorias que podem ser incluídas:
+>
+>   -   Adicionar funcionalidade para inverter as moedas de origem e destino.
+>   -   Implementar validações em tempo real dos campos de entrada.
+>   -   Adicionar mais opções de formatação para os resultados (ex: diferentes números de casas decimais).
+>   -   Melhorias de acessibilidade na interface.
 
-3. Interaja com a interface para realizar suas conversões.
+## Mais Sobre Mim:
 
-Nota: Não é necessário instalar dependências, pois o projeto é baseado em tecnologias front-end.
-
-## Funcionalidades
-- Seleção da moeda de origem e destino para conversão.
-- Entrada personalizada para a taxa de conversão.
-- Cálculo instantâneo do valor convertido com base no valor inserido.
-- Interface amigável, com visual moderno e intuitivo.
-
-## Resultados e Conclusões
-O projeto oferece uma solução rápida e eficiente para conversão de moedas, ideal para usuários que precisam realizar cálculos básicos de forma acessível e prática.
-Destaques:
-- Interface limpa e responsiva.
-- Funcionalidade de cálculo precisa e em tempo real.
-
-## Próximos Passos/Melhorias
-- Adicionar suporte à integração com APIs de câmbio para taxas de conversão automáticas e atualizadas.
-- Implementar validações para evitar erros de entrada do usuário.
-- Traduzir a interface para múltiplos idiomas.
-- Melhorar a responsividade para dispositivos móveis.
-
-<br>
-<hr> 
-
-### Currículos e Documentos
-Acesse os arquivos disponíveis na pasta 
-[![Documentos](https://img.shields.io/badge/DOCUMENTOS-%F0%9F%93%83-blue?style=flat-square)](https://github.com/vitoriapguimaraes/vitoriapguimaraes/tree/main/DOCUMENTOS) para mais informações sobre minhas qualificações e certificações.
+Acesse os arquivos disponíveis na [Pasta Documentos](https://github.com/vitoriapguimaraes/vitoriapguimaraes/tree/main/DOCUMENTOS) para mais informações sobre minhas qualificações e certificações.
