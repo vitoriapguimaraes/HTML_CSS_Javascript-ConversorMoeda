@@ -1,69 +1,72 @@
 # Conversor de Moedas
 
->   Uma aplicação web que permite converter valores entre diferentes moedas de forma fácil e rápida.
+> Aplicação web para conversão de valores entre diferentes moedas, com interface intuitiva, validação de dados e histórico exportável. Ideal para quem precisa realizar conversões rápidas e acompanhar resultados.
 
-O projeto oferece uma interface intuitiva para inserir o valor, escolher as moedas de origem e destino, e visualizar o resultado da conversão, além de manter um histórico das conversões realizadas.
+[![Acesse: Conversor de Moeda](https://img.shields.io/badge/-Conversor%20de%20Moeda-000000?style=for-the-badge)](https://vitoriapguimaraes.github.io/HTML_CSS_Javascript-ConversorMoeda/)
 
-<a href="https://vitoriapguimaraes.github.io/HTML_CSS_Javascript-ConversorMoeda/"><img src="https://img.shields.io/badge/-Conversor%20de%20Moeda-000000?style=for-the-badge" alt="HTML_CSS_Javascript-ConversorMoeda">
+![Demonstração do sistema](https://github.com/vitoriapguimaraes/HTML_CSS_Javascript-ConversorMoeda/blob/main/results/converter.gif)
 
-![Tela do sistema](https://github.com/vitoriapguimaraes/HTML_CSS_Javascript-ConversorMoeda/blob/main/results/converter.gif)
+## Funcionalidades Principais
 
-## Funcionalidades Principais:
+- Conversão de valores entre diferentes moedas.
+- Seleção de moeda de origem e destino.
+- Exibição clara do resultado da conversão.
+- Validação dos campos de entrada.
+- Histórico das conversões realizadas.
+- Exportação do histórico para arquivo .txt.
 
--   Converte valores entre diferentes moedas.
--   Permite ao usuário selecionar a moeda de origem e a moeda de destino.
--   Exibe o resultado da conversão de forma clara.
--   Valida a entrada de dados para garantir que os campos sejam preenchidos corretamente.
--   Mantém um histórico das conversões realizadas.
--   Permite exportar o histórico de conversões para um arquivo .txt.
+## Tecnologias Utilizadas
 
-## Tecnologias Utilizadas:
+- HTML5
+- CSS3
+- JavaScript
+- API de Câmbio ([currencyapi.com](https://api.currencyapi.com/v3/))
 
--   HTML5
--   CSS3
--   JavaScript
--   API de Câmbio (https://api.currencyapi.com/v3/)
+## Como Executar
 
-## Como Executar: [cite: 37, 38]
+1. Clone o repositório:
 
-1.  Clone o repositório
-2.  Navegue até o diretório do projeto.
-3.  Abra o arquivo `index.html` no seu navegador.
+   ```bash
+   git clone https://github.com/vitoriapguimaraes/HTML_CSS_Javascript-ConversorMoeda.git
+   ```
 
-## Como Usar:
+2. Navegue até o diretório do projeto:
 
-1.  Selecione a moeda de origem no primeiro campo de seleção.
-2.  Insira o valor que deseja converter no campo de entrada.
-3.  Selecione a moeda de destino no segundo campo de seleção.
-4.  Clique no botão "Converter" para realizar a conversão.
-5.  O resultado da conversão será exibido na tela.
-6.  O histórico de conversões é exibido em uma tabela abaixo do conversor.
-7.  Clique no botão "Exportar como .txt" para baixar o histórico de conversões em um arquivo de texto.
+   ```bash
+   cd HTML_CSS_Javascript-ConversorMoeda
+   ```
 
-## Estrutura de Diretórios:
+3. Abra o arquivo `index.html` no seu navegador.
+
+## Como Usar
+
+1. Selecione a moeda de origem.
+2. Insira o valor a ser convertido.
+3. Selecione a moeda de destino.
+4. Clique em "Converter" para ver o resultado.
+5. O histórico das conversões aparecerá abaixo do conversor.
+6. Clique em "Exportar como .txt" para baixar o histórico.
+
+## Estrutura de Diretórios
 
 ```
-/conversor-de-moedas
+/HTML_CSS_Javascript-ConversorMoeda
 ├── index.html
-├── src
+├── src/
 │   ├── styles.css
 │   ├── script.js
-│   └── config.js          # Arquivo de configuração (API Key)
-├── results/                # Prints e gifs do software
+│   ├── config.js         # Arquivo de configuração (API Key)
+│   └── assets/
+├── results/              # Prints e gifs do software
 └── README.md
 ```
 
-## Status:
+## Status
 
 ✅ Concluído
 
->   Melhorias que podem ser incluídas:
->
->   -   Adicionar funcionalidade para inverter as moedas de origem e destino.
->   -   Implementar validações em tempo real dos campos de entrada.
->   -   Adicionar mais opções de formatação para os resultados (ex: diferentes números de casas decimais).
->   -   Melhorias de acessibilidade na interface.
+> Veja as [issues abertas](https://github.com/vitoriapguimaraes/HTML_CSS_Javascript-ConversorMoeda/issues) para sugestões de melhorias e próximos passos.
 
-## Mais Sobre Mim:
+## Mais Sobre Mim
 
 Acesse os arquivos disponíveis na [Pasta Documentos](https://github.com/vitoriapguimaraes/vitoriapguimaraes/tree/main/DOCUMENTOS) para mais informações sobre minhas qualificações e certificações.
